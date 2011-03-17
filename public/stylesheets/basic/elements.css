@@ -4,9 +4,9 @@
   Илья Зыкин
 */
 .phone{
-  height:208px;
-  background:#FFF url(/images/basic/phone-main.jpg) no-repeat scroll 0 0;
+  background:#FFF url(/images/basic/just-phone.jpg) no-repeat scroll 0 0;
   margin:0 0 25px 0;
+  padding-top: 110px;
 }
 .liner{
   height:3px;
@@ -18,5 +18,18 @@
   height:3px;
   width:265px;
   background:#DB0101;
+}
+.phone p{
+  text-align:right;
+  padding-right: 37px;
+}
+.phone p strong{
+  color:#db0102;
+  font-size:15pt;
+}
+.phone p i{
+  color: gray;
+  font-size: 12pt;
+  font-style: normal;
 }
 /* curve 7C7C7C*/
