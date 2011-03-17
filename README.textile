@@ -10,6 +10,8 @@ h3. Rails
 
 2.3.4 
 
+h1. HOW TO INSTALL?
+
 h3. INSTALLING
 
 $ sudo gem install -v=2.3.4 rails --no-ri --no-rdoc
@@ -47,3 +49,11 @@ http://troya37.ru:3000/session/new
 
 admin
 qwerty
+
+h3. DESIGN by FreeLancer: Evgeniya Pronina
+
+http://www.free-lance.ru/users/Evgeniyyya/viewproj.php?prjid=1714032
+
+h3. Coding by: the-teacher
+
+https://github.com/the-teacher
