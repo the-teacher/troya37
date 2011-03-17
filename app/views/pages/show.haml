@@ -1,0 +1,20 @@
+-if @page
+  - content_for :title do
+    = @page.title
+  - content_for :meta do
+    - description=  @page.description.blank?  ? include_global(:default_description)  : @page.description
+    - keywords=     @page.keywords.blank?     ? include_global(:default_keywords)     : @page.keywords
+    - author=       @page.author.blank?       ? include_global(:default_author)       : @page.author
+
+    %meta{ :name => "description", :content => description }
+    %meta{ :name => "keywords", :content => keywords }
+    %meta{ :name => "author", :content =>author }
+
+  - content_for :head do
+    = @page.head
+  - content_for :footer do
+    = @page.footer
+  = @page.content
+
+- if @page.name == 'index'
+  =render :partial => "shared/news_block"

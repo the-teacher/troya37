@@ -1,0 +1,22 @@
+/*
+  killich's xHTML
+  killich@yandex.ru
+  Илья Зыкин
+*/
+.footer{
+  position:relative;
+  background:#F1F1F1;
+  padding:10px 0 0 300px;
+}
+.footer p{font-size:8pt;}
+.footer a.counter{
+  display:block;
+  position:absolute;
+  top:20;
+  left:90px;
+  width:88px;
+  height:31px;
+  background:#FFF url(/images/basic/counter.jpg) no-repeat scroll 0 0;
+  text-decoration:none;
+}
+.footer a.counter:hover{background:#FFF url(/images/basic/counter.jpg) no-repeat scroll 0 -31px;}

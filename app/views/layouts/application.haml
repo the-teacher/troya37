@@ -1,0 +1,52 @@
+!!! 1.1
+%html{ "xml:lang" => "ru", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "IE=EmulateIE7", "http-equiv" => "X-UA-Compatible" }
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{ :content => "no-cache", "http-equiv" => "Pragma" }
+    %title
+      =yield :title
+    =yield :meta
+
+    =stylesheet_link_tag 'basic/reset.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/basic.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/context.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/layout.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/nav.css', :media=>'screen'    
+    =stylesheet_link_tag 'basic/elements.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/styles.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/form.css', :media=>'screen'
+    =stylesheet_link_tag 'basic/footer.css', :media=>'screen'
+    
+    =yield :js
+    =yield :css
+    =yield :head
+    
+    =#stylesheet_link_tag 'basic/index.css', :media=>'screen'
+    
+  %body
+    .body.overblock
+      %p.sitelogo= '&nbsp;'
+      = link_to '&nbsp;', page_path(:id=>'catalogue'), :class=>:products, :title => "Продукция"
+      = link_to '&nbsp;', page_path(:id=>'machinery'), :class=>:hardware, :title => "Оборудование"
+      = link_to '&nbsp;', page_path(:id=>'sources'), :class=>:sources, :title => "Сырье"
+      .homepage
+        %span
+          http://troya37.ru
+      .content.overblock
+        .left
+          =render :partial => "shared/navigation_menu/nav"
+          .phone
+          %div{:style=>'text-align:center; margin:15px 0 15px 0;'}
+            = include_global :informers
+        .right
+          = app_flash(flash)
+          =yield
+      .liner
+        .redliner
+      .footer.overblock
+        =yield(:footer).blank? ? include_global(:default_footer) : yield(:footer)
+
+        %p
+          &copy; #{Time.now.year} г. ООО "ТРОЯ". Россия, Иваново. Все права защищены.
+          -#%br E-mail: %a{ :href => "#" } w37@mail.ru

@@ -1,0 +1,35 @@
+%h3
+  =t('text.sessions.new.wellcome')
+
+.form
+  .ltc
+    &nbsp;
+  .rtc
+    &nbsp;
+  .lbc
+    &nbsp;
+  .rbc
+    &nbsp;
+  -form_tag session_path do
+    %label{:for=>:login}
+      =t('text.sessions.new.login_label')
+    %span
+      = text_field_tag :login, '', :class=>:input
+    %p
+      =t('text.sessions.new.login')
+      
+    %label{:for=>:password}
+      =t('text.sessions.new.password_label')
+    %span
+      = password_field_tag :password, '', :class=>:input
+    %p
+      =t('text.sessions.new.password')
+    -#      
+      %label{:for=>:remember_me}
+        = check_box_tag 'remember_me', '1', false, :class=>:check_box
+        =t('text.sessions.new.remember_me')        
+      %p
+        =t('text.sessions.new.check_requirement')
+
+    %p
+      = submit_tag t('enter'), :class=>:submit

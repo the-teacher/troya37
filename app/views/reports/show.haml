@@ -1,0 +1,26 @@
+-if @report
+  - content_for :title do
+    = @report.title
+  - content_for :meta do
+    - description=  @report.description.blank?  ? include_global(:default_description)  : @report.description
+    - keywords=     @report.keywords.blank?     ? include_global(:default_keywords)     : @report.keywords
+    - author=       @report.author.blank?       ? include_global(:default_author)       : @report.author
+
+    %meta{ :name => "description", :content => description }
+    %meta{ :name => "keywords", :content => keywords }
+    %meta{ :name => "author", :content =>author }
+
+  - content_for :head do
+    = @report.head
+  - content_for :footer do
+    = @report.footer
+  = @report.content
+
+-if @report
+  %h4
+    = @report.title
+  = @report.content
+  
+%p
+  %br
+  =link_to '&laquo; К списку новостей', reports_path

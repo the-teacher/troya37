@@ -1,0 +1,52 @@
+-# content_for :current_editor do = render :partial => "shared/current_editor_bar"
+%ul.ext_nav
+  %li
+    = link_to '&laquo; Назад к списку сообщений', box_questions_path
+
+= object_errors(@question)
+
+.form
+  .ltc
+    &nbsp;
+  .rtc
+    &nbsp;
+  .lbc
+    &nbsp;
+  .rbc
+    &nbsp;    
+      
+  -form_for( :question, :url=>question_path, :html=>{:method=>:put} ) do |f|
+    -#%label{:for=>:to} Для кого %p = f.text_field :to, :class=>:input
+    
+    %label{:for=>:from}
+      От кого
+    %p
+      = f.text_field :from, :class=>:input
+      
+    %label{:for=>:topic}
+      Тема вопроса
+    %p
+      = f.text_field :topic, :class=>:input
+
+    %label{:for=>:question}
+      Вопрос
+    %p
+      = f.text_area :question, :class=>:textarea_small
+      
+    %label{:for=>:contacts}
+      Контактные данные
+    %p
+      = f.text_area :contacts, :class=>:textarea_small
+      
+    %label{:for=>:answere}
+      Ответ
+    %p
+      = f.text_area :answere, :class=>:textarea_small
+
+    %p
+      = submit_tag 'Обновить данные этого сообщения', :class=>:submit 
+  %div{:style=>'margin:0 0 8px 0;'}      
+    -if @question.state == 'seen'        
+      = button_to "Опубликовать в разделе Вопрос / Ответ", {:controller=>:questions, :action=>:publication, :id=>@question.zip}, {:method=>:put}
+    -elsif @question.state == 'publicated'
+      = button_to "Снять с публикации", {:controller=>:questions, :action=>:unpublication, :id=>@question.zip}, {:method=>:put}

@@ -1,0 +1,57 @@
+/*
+  killich's xHTML
+  killich@yandex.ru
+  Илья Зыкин
+*/
+p.sitelogo{
+  position:absolute;
+  top:27px;
+  left:7px;
+  width:283px;
+  height:84px;
+  text-decoration:none;
+  background:#FFF url(/images/basic/troya.jpg) no-repeat scroll center 0;
+  margin:0; padding:0;
+}
+a.products:hover{text-decoration:none;}
+a.products{
+  display:block;
+  position:absolute;
+  top:242px;
+  left:380px;
+  width:91px;
+  height:25px;
+  text-decoration:none;
+  background:#FFF url(/images/basic/products.jpg) no-repeat scroll center -25px;
+}
+a.products:hover{background:#FFF url(/images/basic/products.jpg) no-repeat scroll center 0;}
+a.hardware{
+  display:block;
+  position:absolute;
+  top:29px;
+  left:567px;
+  width:124px;
+  height:25px;
+  text-decoration:none;
+  background:#FFF url(/images/basic/hardware.jpg) no-repeat scroll center -25px;
+}
+a.hardware:hover{background:#FFF url(/images/basic/hardware.jpg) no-repeat scroll center 0;}
+a.sources{
+  display:block;
+  position:absolute;
+  top:248px;
+  left:807px;
+  width:53px;
+  height:18px;
+  text-decoration:none;
+  background:#FFF url(/images/basic/sources.jpg) no-repeat scroll center -19px;
+}
+a.sources:hover{background:#FFF url(/images/basic/sources.jpg) no-repeat scroll center 0;}
+.homepage{
+  position:absolute;
+  top:200px;
+  left:30px;
+  padding:1px 0 1px 15px;
+  background:#FFF url(/images/basic/home.jpg) no-repeat scroll 0 2px;
+}
+.homepage span{color:#0064DC; text-decoration:underline;}

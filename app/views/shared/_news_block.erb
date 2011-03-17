@@ -1,0 +1,34 @@
+<table class='index_dynamic'>
+  <tbody>
+    <tr>
+      <td class='news'>
+        <h5>Новости</h5>
+        
+        <% @news= Report.find_all_by_state('publicated', :order=>"created_at DESC", :limit=>2 ) %>
+        
+        <%@news.each do |r|%>
+          <strong><%=r.created_at.strftime("%d/%m/%Y") %></strong>
+          <p><%=h r.annotation %></p>
+          <%= link_to 'Подробнее &raquo;', report_path(r), :class=>'linkmore' %>
+        <%end%>
+        
+        <%= link_to 'Все новости &raquo;', reports_path, :class=>'linkmore' %>
+      </td>
+
+      <td class='delivery'>
+        <h5>Доставка и оплата</h5>
+        
+        <div class='block'>
+          <p>ООО "ТРОЯ" осуществляет оперативную доставку:</p>
+          <ul>
+            <li>по г.Иваново при заказе более 3000 пар - бесплатно;</li>
+            <li>по г.Иваново при заказе менее 3000 пар - 1000 руб. 00 коп.;</li>
+            <li>по Ивановской области - 15 руб./км</li>
+          </ul>
+          <a href='/pages/delivery' class='linkmore'>Подробнее</a>
+        </div>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>

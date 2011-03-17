@@ -1,0 +1,8 @@
+tmp
+db/schema.rb
+doc
+log
+config/database.yml
+/*.txt
+*.bat
+*.sql

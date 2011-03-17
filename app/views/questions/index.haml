@@ -1,0 +1,137 @@
+- content_for :title do
+  Вопросы к администрации сайта
+
+- content_for :meta do
+  - description=  include_global(:default_description)
+  - keywords=     include_global(:default_keywords)
+  - author=       include_global(:default_author)
+
+  %meta{ :name => "description", :content => description }
+  %meta{ :name => "keywords", :content => keywords }
+  %meta{ :name => "author", :content =>author }
+
+- content_for :css do
+  =stylesheet_link_tag 'basic/paginator.css', :media=>'screen'
+
+- content_for :js do
+  = javascript_include_tag 'jq/jquery-1.2.6.pack.js', 'jq/effects.core.js', 'jq/effects.blind.js'
+
+  - javascript_tag do
+    function show_add_hide_form(){
+    $("#send_form").toggle("blind", {direction:"vertical"}, 1000);
+    $("#send_link").toggle("blind", {direction:"vertical"}, 1000);
+    }
+
+%h3
+  Вопрос/Ответ
+= object_errors(@question)
+
+.form
+  .ltc
+    &nbsp;
+  .rtc
+    &nbsp;
+  .lbc
+    &nbsp;
+  .rbc
+    &nbsp;
+    
+  %h5
+    Задать вопрос
+  
+  #send_link{:style=>'margin:0 0 10px 0;'}
+    %p{:style=>'margin:0 0 8px 0;'}
+      =link_to_function 'Задать вопрос прямо сейчас!', "show_add_hide_form()"
+  
+  #send_form{:style=>'display:none;'}        
+    -form_for :question, :url => questions_path do |f|
+      %label{:for=>:from}
+        От кого
+      %p
+        = f.text_field :from, :class=>:input
+        
+      -# %label{:for=>:from} Для кого %p = f.text_field :to, :class=>:input
+        
+      %label{:for=>:topic}
+        Тема вопроса
+      %p
+        = f.text_field :topic, :class=>:input
+        
+      %label{:for=>:question}
+        Ваш вопрос (не более 600 символов)
+      %p
+        = f.text_area :question, :class=>:textarea_small
+        
+      %label{:for=>:contacts}
+        Ваши контактные данные тел., email и т.д., их увидит только администратор (не более 600 символов)
+      %p
+        = f.text_area :contacts, :class=>:textarea_small
+
+      -# %label{:for=>:website} Сюда Вы можете вписать имя своего сайта %p = f.text_field :website, :class=>:input
+      -# %label{:for=>:email} Укажите электронную почту и мы будем знать как с вами связаться %p = f.text_field :email, :class=>:input
+    
+      = hidden_field_tag :captcher_code, @question.user.zip
+
+      %label{:for=>:title}
+        Вредные рекламные программы никогда не введут в это поле
+        %br
+        символы с картинки
+      %p
+        = show_simple_captcha(:object=>:question, :distortion=>'medium', :image_style=>['embosed_silver', 'simply_red', 'distorted_black', 'charcoal_grey'].rand)
+      %p
+        = submit_tag 'Задать вопрос', :class=>:submit
+      %p
+        =link_to_function 'Спрятать эту форму', "show_add_hide_form()"
+
+= will_paginate @questions
+          
+- if @questions.empty?
+  %br
+  %br
+  %br
+  %h4
+    К сожалению, опубликованных ответов на заданные вопросы еще&nbsp;нет
+    ='<br />'*10
+
+- @questions.each do |q|
+  .form
+    .ltc
+      &nbsp;
+    .rtc
+      &nbsp;
+    .lbc
+      &nbsp;
+    .rbc
+      &nbsp;    
+    %p
+      %b
+        От кого:
+      =q.from
+    %p
+      %b
+        Тема:
+      =q.topic
+
+    %p
+      %b
+        Вопрос:
+      =q.question
+      
+    %p
+      %b
+        Ответ:
+    %p{:style=>'padding:5px; background:#EEE;'}
+      =q.answere
+      
+    %p
+      Вопрос был задан:
+      %b
+        =q.created_at.to_s(:db).split(' ').first
+
+= will_paginate @questions  
+
+  
+  
+  
+  
+  

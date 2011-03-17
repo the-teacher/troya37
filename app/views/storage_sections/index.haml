@@ -1,0 +1,15 @@
+%ul.ext_nav
+  %li
+    = link_to '&laquo; Назад в личный кабинет', cabinet_users_url
+
+=# object_errors(@storage_sections)
+
+%h5 Хранилище файлов
+.map
+  %ul
+    - @storage_sections.each do |section|
+      %li{:style=>"padding:10px;margin:0 0 10px 0;"}
+        =link_to image_tag('iconza/blue/downloads_folder.png', :style=>'vertical-align:middle;') + " " + section.name + " (#{section.storage_files.size.to_s} файлов)", storage_files_url(:id=>section.zip), :style=>'font-weight:bold;'
+
+= '<br />'*30
+  

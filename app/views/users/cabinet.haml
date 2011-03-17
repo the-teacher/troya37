@@ -1,0 +1,24 @@
+- content_for :navigation_menu do
+  =render :partial => "shared/navigation_menu/nav"
+  
+%h3=t('cabinet')
+
+.block
+  %ul.ext_nav
+    %li
+      - text= content_tag :span, t('page.manage'), :class=>:bar
+      = link_to text, manager_pages_path
+    %li
+      -# Определяется кол-во новых сообщений, и если они есть - то формируется текст
+      - nqs= current_user.new_questions.size
+      - new_questions_size = ( nqs > 0 ? "(новых : #{nqs})" : "")
+      - text= content_tag :span, "Вопрос/Ответ #{new_questions_size}", :class=>:bar
+      = link_to text, box_questions_path
+    %li
+      = link_to 'Новости сайта', manager_reports_path      
+    %li
+      - @storage_sections= StorageSection.find(:first)
+      - text= content_tag :span, t('my_files'), :class=>:bar
+      = link_to text, storage_files_url(:id=>@storage_sections.zip) #storage_sections_url
+    %li
+      = link_to 'Выход', logout_path

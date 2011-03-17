@@ -1,0 +1,14 @@
+<noindex>
+
+  <script type="text/javascript">
+  document.write( '<a href="http://www.informer.ru/cgi-bin/redirect.cgi?id=177_1_1_52_40_1-0&url=http://www.rbc.ru/cash/&src_url=usd/eur_cb_forex_cf320e_88x90.gif" target="_blank"><img src="http://pics.rbc.ru/img/grinf/usd/eur_cb_forex_cf320e_88x90.gif?'+ Math.floor( 100000*Math.random() ) + '" WIDTH="88" HEIGHT="90" border="0" /></a>');
+  </script>
+             
+  <a href="http://www.gismeteo.ru/city/daily/4318/"><img src="http://informer.gismeteo.ru/new/4318-7.GIF" alt="GISMETEO: Погода по г.Иваново" title="GISMETEO: Погода по г.Иваново" border="0" /></a>
+
+  <br />
+  <br />
+
+  <a href="http://www.cotton.ru"><img src="http://www.cotton.ru/cgi-bin/cotton-index.pl" border="0" width="178" height="110" alt="Маркетинговые исследования рынка текстиля - Анитэкс" /></a>
+
+</noindex>

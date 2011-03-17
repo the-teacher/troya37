@@ -1,0 +1,30 @@
+<noindex>
+<p>
+<!-- InetLog -->
+<script language="javascript">
+i=Math.random();w=screen.width;h=screen.height;
+clr=screen.colorDepth;
+if(navigator.cookieEnabled) ck = "Y"; else ck = "N";
+document.write('<a href="http://inetlog.ru/" target="_top"><img width=88 height=31 src="http://inetlog.ru/counter/?i='+i+'&cid=48&r='+escape(document.referrer)+'&sid=38247&ck='+ck+'&res='+w+'x'+h+'&clr='+clr+'&pg='+escape(window.location.href)+'" alt="InetLog.ru - статистика сайта" border=0></a>')
+</script><a href="http://inetlog.ru" title="статистика"><img border="0" width="1" height="1" src="http://inetlog.ru/img/del.gif" alt="статистика сайта"></a>
+<!-- /InetLog -->
+</p>
+
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter4657501 = new Ya.Metrika(4657501);
+             yaCounter4657501.clickmap(true);
+             yaCounter4657501.trackLinks(true);
+        
+        } catch(e) { }
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><img src="//mc.yandex.ru/watch/4657501" style="position:absolute; left:-9999px;" alt="" /></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</noindex>

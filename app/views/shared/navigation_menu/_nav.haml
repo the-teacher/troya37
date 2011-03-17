@@ -1,0 +1,21 @@
+%ul.nav
+  - @pages_tree.each do |page|
+    %li
+      - current=  'current' if (page == @pages_tree.first && current_page?(:controller => 'pages', :action => 'first'))
+      - current=  'current' if current_page?(:controller => 'pages', :action => 'show', :id=>page)
+      -if page.name == 'index'
+        =link_to page.header, '/', :class=>current
+      -else
+        =link_to page.header, page_path(page), :class=>current
+  %li
+    -current = current_page?(:controller => 'reports') ? 'current' : nil
+    =link_to 'Новости', reports_path, :class=>current
+  %li
+    -current = current_page?(:controller => 'questions') ? 'current' : nil
+    =link_to 'Вопрос/Ответ', questions_path, :class=>current
+  - if logged_in?
+    %li
+      =link_to 'Личный кабинет', cabinet_users_path
+      =link_to 'Выход', logout_path
+      
+    

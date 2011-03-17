@@ -1,0 +1,84 @@
+- content_for :title do
+  Новости сайта
+
+- content_for :meta do
+  - description=  include_global(:default_description)
+  - keywords=     include_global(:default_keywords)
+  - author=       include_global(:default_author)
+
+  %meta{ :name => "description", :content => description }
+  %meta{ :name => "keywords", :content => keywords }
+  %meta{ :name => "author", :content =>author }
+
+- content_for :css do
+  =stylesheet_link_tag 'basic/paginator.css', :media=>'screen'
+
+- content_for :js do
+  = javascript_include_tag 'jq/jquery-1.2.6.pack.js', 'jq/effects.core.js', 'jq/effects.blind.js'
+  - javascript_tag do
+    function show_add_hide_form(){
+    $("#send_form").toggle("blind", {direction:"vertical"}, 1000);
+    $("#send_link").toggle("blind", {direction:"vertical"}, 1000);
+    }
+
+%h3
+  Новости
+  
+= object_errors(@report)
+
+= will_paginate @reports
+          
+- if @reports.empty?
+  %br
+  %br
+  %br
+  %h4
+    К сожалению, опубликованных новостей еще&nbsp;нет
+    ='<br />'*30
+
+- @reports.each do |q|
+  .form
+    .ltc
+      &nbsp;
+    .rtc
+      &nbsp;
+    .lbc
+      &nbsp;
+    .rbc
+      &nbsp;    
+      
+    %p
+      %b
+        =q.created_at.to_s(:db).split(' ').first
+        
+    %p
+      %b
+        Тема:
+      =q.title
+      
+    %p
+      %b
+        Описание:
+      =q.annotation
+      
+    %p
+      =link_to 'читать &raquo;', report_path(q)
+    
+    -#  
+      %p
+        %b
+          Сообщение:
+        =q.content
+      
+      %p
+        Новость от:
+        %b
+          =q.created_at.to_s(:db).split(' ').first
+
+= will_paginate @reports  
+
+  
+  
+  
+  
+  

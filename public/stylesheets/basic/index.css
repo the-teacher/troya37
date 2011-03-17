@@ -1,0 +1,24 @@
+/*
+  killich's xHTML
+  killich@yandex.ru
+  Илья Зыкин
+*/
+.index_dynamic{ width:99%; }
+.index_dynamic .news{ width:260px; }
+
+.index_dynamic .news strong{
+  display:block;
+  margin:0 0 10px 0;
+  font-size:13pt;
+  font-weight:normal;
+  color:#666;
+}
+
+.index_dynamic .delivery{ background:#FFF url(/images/basic/gazele.jpg) no-repeat scroll 0 60px; }
+.index_dynamic .delivery .block{ margin:0 0 0 170px; }
+.index_dynamic .delivery .block li{
+  line-height:150%; margin:0 0 15px 0;
+  list-style-image:none;  
+  list-style-position:inside;
+  list-style-type:disc;
+}

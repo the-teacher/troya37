@@ -1,0 +1,16 @@
+-# content_for :navigation_menu do =render :partial => "shared/navigation_menu/nav"
+-if @page
+  - content_for :title do
+    = @page.title
+  - content_for :meta do
+    %meta{ :name => "description", :content => "#{h @page.description}" }
+    %meta{ :name => "keywords", :content => "#{h @page.keywords}" }
+    %meta{ :name => "author", :content => "#{h @page.author} :: webmaster :: Илья Зыкин :: zykin-ilya@ya.ru" }
+  - content_for :head do
+    = @page.head
+  - content_for :footer do
+    = @page.footer
+  = @page.content
+
+- if @page.name == 'index'
+  =render :partial => "shared/news_block"

@@ -1,0 +1,22 @@
+/*
+  killich's xHTML
+  killich@yandex.ru
+  Илья Зыкин
+*/
+.phone{
+  height:208px;
+  background:#FFF url(/images/basic/phone-main.jpg) no-repeat scroll 0 0;
+  margin:0 0 25px 0;
+}
+.liner{
+  height:3px;
+  background:#E3E2E2;
+  overflow:hidden;
+  zoom:1;
+}
+.redliner{
+  height:3px;
+  width:265px;
+  background:#DB0101;
+}
+/* curve 7C7C7C*/

@@ -1,0 +1,14 @@
+- content_for :css do
+  =stylesheet_link_tag 'basic/tree_controls.css', :media=>'screen'
+  
+%ul.ext_nav
+  %li
+    = link_to '&laquo; Назад в личный кабинет', cabinet_users_url
+      
+%h5 Управление страницами сайта
+.admin_map
+  = manager_pages_tree!(@pages_tree_for_tree_rendering)
+  
+%ul.ext_nav
+  %li
+    = link_to ' Создать корневую страницу', new_page_path

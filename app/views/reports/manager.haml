@@ -1,0 +1,67 @@
+- content_for :css do
+  =stylesheet_link_tag 'basic/paginator.css', :media=>'screen'
+
+%ul.ext_nav
+  %li
+    = link_to '&laquo; Назад в личный кабинет', cabinet_users_url
+    
+= object_errors(@report)
+    
+= will_paginate @reports
+          
+- if @reports.empty?
+  %h4
+    Время сообщить миру о себе! :)
+
+- @reports.each do |q|
+  .form
+    .ltc
+      &nbsp;
+    .rtc
+      &nbsp;
+    .lbc
+      &nbsp;
+    .rbc
+      &nbsp;    
+      
+    -color_set= {:publicated=>'#BBD653', :hided=>'#CCC'}
+    -color_set_names= {:publicated=>'опубликовано', :hided=>'не опубликовано'}
+    -color= color_set[q.state.to_sym]
+    
+    %p{:style=>"color: #{color}; font-weight:bold;"}
+      Статус:
+      =color_set_names[q.state.to_sym]
+    %p
+      %b
+        Заголовок:
+      =q.title
+      
+    %p
+      %b
+        Краткое описание:
+      =q.annotation
+      
+    %p
+      Новость от:
+      %b
+        =q.created_at.to_s(:db).split(' ').first
+        
+    %p
+      = link_to 'Просмотр', edit_report_path(q)
+      = ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '
+      - text = (q.state=='publicated' ? 'Снять с публикации' : 'Опубликовать')
+      = link_to text, change_state_report_path(q)
+      = ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '
+      = link_to 'Удалить', q, :method=>:delete, :confirm=>'Вы уверенны, что хотите удалить эту новость безвозвратно?'
+
+= will_paginate @reports  
+
+%ul.ext_nav
+  %li
+    = link_to 'Добавить новость', new_report_path
+
+  
+  
+  
+  
+  

@@ -1,0 +1,40 @@
+/*
+  killich's xHTML
+  killich@yandex.ru
+  Илья Зыкин
+*/
+
+/* headers */
+h1,h2,h3,h4,h5,h6 {font-weight:normal; margin-bottom:20px; color:#DB0101; }
+h1{ font-size:22pt; }
+h2{ font-size:20pt; }
+h3{ font-size:18pt; }
+h4{ font-size:16pt; }
+h5{ font-size:14pt; }
+h6{ font-size:12pt; }
+/* headers */
+
+body{
+  background:#FFF;
+  font-family:Tahoma, Verdana, Arial, Trebuchet MS, Tahoma, serif, Times New Roman;
+  font-size:8pt;
+  /*behavior:url("/stylesheets/basic/hover.htc");*/
+}
+.body{
+  width:990px;
+  margin:auto;
+  border:1px solid #CCC;
+  background:#FFFFFF url(/images/basic/header-bg.jpg) no-repeat scroll center 0;
+  position:relative;
+}
+ul.numered{
+  list-style-position:inside;
+  list-style-type:decimal;
+}
+ul.numered li{ line-height:150%; }
+
+ul.marked{
+  list-style-position:inside;
+  list-style-type:disc;
+}
+ul.marked li{ line-height:150%; }

@@ -1,0 +1,43 @@
+/*
+  killich's xHTML
+  killich@yandex.ru
+  Илья Зыкин
+*/
+.linkmore{
+  display:block;
+  text-align:right;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+.img_left{  margin:5px 10px 5px 0; float:left;    /*border:2px solid #AAA;*/}
+.img_right{ margin:5px 0 5px 10px; float:right;   /*border:2px solid #AAA;*/}
+
+/*system_messages*/
+.system_messages{
+  margin:0 0 15px 0;
+}
+.system_messages li{
+  line-height:150%;
+  margin:0 0 7px 0;
+  list-style-position:inside;
+  list-style-type:disc;
+}
+.system_messages .notice{
+  background:#FFF none repeat scroll 0 0;
+  border:1px solid #A5C9FF;
+  padding:10px;
+  margin:0 0 10px 0;
+}
+.system_messages .error{
+  background:#FFF none repeat scroll 0 0;
+  border:1px solid #F77;
+  padding:10px;
+  margin:0 0 10px 0;
+}
+.system_messages .warning{
+  background:#FFF none repeat scroll 0 0;
+  border:1px solid #FFD324;
+  padding:10px;
+  margin:0 0 10px 0;
+}
+/*system_messages*/

@@ -1,0 +1,40 @@
+%ul.ext_nav
+  %li
+    = link_to '&laquo; Назад в личный кабинет', cabinet_users_url
+      
+= object_errors(@report)
+
+%h5
+  Добавить новость
+    
+.form
+  .ltc
+    &nbsp;
+  .rtc
+    &nbsp;
+  .lbc
+    &nbsp;
+  .rbc
+    &nbsp;
+    
+
+  -form_for :report, :url => reports_path do |f|
+    %label{:for=>:title}
+      Заголовок новости
+    %p
+      = f.text_field :title, :class=>:input
+      
+    %label{:for=>:anotation}
+      Очень краткое описание новости
+    %p
+      = f.text_area :annotation, :class=>:textarea_small
+  
+    -#%label{:for=>:marks} Вставка HTML разметки %br =render :partial => "shared/editor/buttons" %br  
+    
+    %label{:for=>:content}
+      Содержимое страницы
+    %p
+      = f.text_area :content, :class=>:textarea_mid
+            
+    %p 	
+      = submit_tag 'Создать новость', :class=>:submit

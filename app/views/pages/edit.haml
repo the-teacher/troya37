@@ -1,0 +1,80 @@
+= object_errors(@page)
+
+%ul.ext_nav
+  %li
+    = link_to 'Назад в личный кабинет', cabinet_users_url
+  %li
+    = link_to 'К дереву страниц',  manager_pages_path
+  %li
+    = link_to 'Просмотр данной страницы',  page_path(@page)
+     
+%h5
+  Редактировать страницу:
+     
+.form
+  .ltc
+    &nbsp;
+  .rtc
+    &nbsp;
+  .lbc
+    &nbsp;
+  .rbc
+    &nbsp;
+  %h5
+    = @page.title
+
+  -form_for( :page, :url=>page_path, :html=>{:method=>:put} ) do |f|
+    %label{:for=>:title}
+      Заголовок окна браузера
+    %p
+      = f.text_field :title, :class=>:input
+      
+    %label{:for=>:name}
+      Латинское имя страницы
+    %p
+      = f.text_field :name, :class=>:input
+
+    %label{:for=>:author}
+      Автор страницы
+    %p
+      = f.text_field :author, :class=>:input
+      
+    %label{:for=>:keywords}
+      Ключевые слова
+    %p
+      = f.text_field :keywords, :class=>:input
+
+    %label{:for=>:description}
+      Краткое описание
+    %p
+      = f.text_field :description, :class=>:input
+      
+    %label{:for=>:copyright}
+      Авторское право
+    %p
+      = f.text_field :copyright, :class=>:input
+
+    %label{:for=>:head_addon}
+      Системный раздел head (вставка css, js и т.д.)
+    %p
+      = f.text_area :head, :class=>:textarea_small
+
+    %label{:for=>:header}
+      Название страницы
+    %p
+      = f.text_field :header, :class=>:input
+      
+    -# %label{:for=>:marks} Вставка HTML разметки %br =render :partial => "shared/editor/buttons"
+    %br                
+    %label{:for=>:content}
+      Содержимое страницы
+    %p
+      = f.text_area :content, :class=>:textarea_mid
+      
+    %label{:for=>:foot_addon}
+      Раздел footer (рекомендуется не заполнять, только для специалистов)
+    %p
+      = f.text_area :footer, :class=>:textarea_small
+      
+    %p
+      = submit_tag 'Обновить', :class=>:submit
