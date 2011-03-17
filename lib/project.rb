@@ -1,7 +1,7 @@
 module Project
   # Project::AVATARA_URL
   # localhost:3000
-  ADDRESS = "http://troya37.ru:3000"
+  ADDRESS = "http://troya37.ru"
   COOKIES_SCOPE = "troya37.ru" # 'localhost:3000' авторизация действительна для всех поддоменов (.poweruser.ru)
   
   AVATARA_DEFAULT = "/uploads/:attachment/default/:style/missing.jpg"

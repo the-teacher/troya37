@@ -1,26 +1,8 @@
-test:
-  adapter: mysql
-  database: troya37_test
-  host: localhost
-  username: root
-  password: qwerty
-  encoding: utf8
-  timeout: 5000
-
-development:
-  adapter: mysql
-  database: troya37_development
-  host: localhost
-  username: root
-  password: qwerty
-  encoding: utf8
-  timeout: 5000
-
 production:
   adapter: mysql
-  database: troya37_production
+  database: ivgloves
   host: localhost
-  username: root
-  password: qwerty
+  username: nginx
+  password: vfcnthbvfhuj
   encoding: utf8
   timeout: 5000
