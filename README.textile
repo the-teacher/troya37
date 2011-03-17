@@ -1,0 +1,49 @@
+h2. Troya 37 company site
+
+The current site with a real database, but with changed the administrator password.
+
+h2. Сайт компании ТРОЯ 37
+
+Действующий сайт с реальной базой данных, но измененным паролем администратора.
+
+h3. Rails
+
+2.3.4 
+
+h3. INSTALLING
+
+$ sudo gem install -v=2.3.4 rails --no-ri --no-rdoc
+
+h3. MySQL database workflow
+
+$ rake db:create:all
+
+$ mysql -u root -p*qwerty*
+<pre>
+  mysql> show databases;
+  mysql> use troya37_development;
+  mysql> \. /home/user/rails_app/troya37/dump-march-2011.sql
+  mysql> exit
+</pre>
+
+h3. HOST FILE config
+
+$ sudo gedit /etc/hosts
+
+<pre>
+127.0.0.1	troya37.ru
+127.0.0.1	www.troya37.ru
+</pre>
+
+h3. Start server and start work
+
+user@user-cpu:~/rails_app/troya37$ ruby script/server
+
+browser://http://troya37.ru:3000
+
+h3. Login as Admin
+
+http://troya37.ru:3000/session/new
+
+admin
+qwerty
