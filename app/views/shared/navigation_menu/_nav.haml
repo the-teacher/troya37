@@ -9,7 +9,7 @@
         =link_to page.header, page_path(page), :class=>current
   %li
     -current = current_page?(:controller => 'reports') ? 'current' : nil
-    =link_to 'Новости', reports_path, :class=>current
+    =link_to 'Новости.', reports_path, :class=>current
   %li
     -current = current_page?(:controller => 'questions') ? 'current' : nil
     =link_to 'Вопрос/Ответ', questions_path, :class=>current
