@@ -22,7 +22,7 @@ namespace :app do
     web_server.start
   end
 
-  # cap app:db_create
+  # cap app:install_ruby
   desc "cap app:install_ruby"
   task :install_ruby do
     run _join [rvm_src, "rvm install #{ruby_version}"]
