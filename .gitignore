@@ -5,4 +5,7 @@ log
 /*.txt
 *.bat
 *.sql
+
+public/uploads/*
 config/database.yml
+config/capistrano/templates/database.production.yml
