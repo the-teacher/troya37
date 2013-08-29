@@ -21,7 +21,13 @@ namespace :app do
     deploy.cold
     web_server.start
   end
-  
+
+  # cap app:db_create
+  desc "cap app:install_ruby"
+  task :install_ruby do
+    run _join [rvm_src, "rvm install #{ruby_version}"]
+  end
+
   # cap app:db_create
   desc "cap app:gemset_create"
   task :gemset_create do

@@ -3,20 +3,20 @@ load "config/capistrano/helpers"
 # =========================================================
 # Params
 # =========================================================
-set :site_name,   "open-cook.ru"
+set :site_name,   "troya37.ru"
 set :server_addr, "zykin-ilya.ru"
 set :application, site_name
 
 # base vars
-set :gemset_name, :open_cook
+set :gemset_name, :troya37
 set :user,        :open_cook_web
-set :socket_name, :open_cook_server
+set :socket_name, :troya37_server
 set :users_home,  "/var/www/open_cook_web/data"
 set :deploy_to,   "#{users_home}/www/#{application}"
-set :repository,  "git@git.assembla.com:open-cook.git"
 default_run_options[:shell] = "/bin/bash --login"
 
 # helper vars
+ser :ruby_version, "ree-1.8.7-head"
 set :rvm_src, 'source "$HOME/.rvm/scripts/rvm"'
 set :gemset,  _join([rvm_src, "rvm gemset use #{gemset_name} "])
 set :app_env, "RAILS_ENV=production "
@@ -24,8 +24,9 @@ set :to_app,  "cd #{release_path} "
 
 # deploy params
 set :scm,         :git
-set :branch,      :new_server
+set :branch,      :master
 set :deploy_via,  :remote_cache
+set :repository,  "git@github.com:the-teacher/troya37.git"
 server server_addr, :app, :web, :db, primary: true
 
 # connection params
