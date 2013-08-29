@@ -38,13 +38,13 @@ namespace :app do
   # cap app:db_create
   desc "cap app:db_create"
   task :db_create do
-    run _join [to_app, gemset, app_env + "rake db:create"]
+    run _join [to_app, use_gemset, app_env + "rake db:create"]
   end
 
   # cap app:db_migrate
   desc "cap app:db_migrate"
   task :db_migrate do
-    run _join [to_app, gemset, app_env + "rake db:migrate"]
+    run _join [to_app, use_gemset, app_env + "rake db:migrate"]
   end
 
   # cap app:assets_build
@@ -114,7 +114,7 @@ namespace :app do
   desc "cap app:bundle"
   task :bundle do
     run "rm -f #{release_path}/Gemfile.lock"
-    run _join [to_app, gemset, "bundle install --without test development"]
+    run _join [to_app, use_gemset, "bundle install --without test development"]
     run "cp #{release_path}/Gemfile.lock #{shared_path}/config/Gemfile.lock"
     run "rm -f #{release_path}/Gemfile.lock"
     run "ln -nfs #{shared_path}/config/Gemfile.lock  #{release_path}/Gemfile.lock"
