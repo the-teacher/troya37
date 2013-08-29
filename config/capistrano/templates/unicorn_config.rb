@@ -11,7 +11,7 @@ stderr_path err_log
 stdout_path log_file
 
 timeout 30
-listen socket_file, backlog: 1024
+listen socket_file, :backlog => 1024
 
 working_directory rails_root
 worker_processes <%= unicorn_workers %>
