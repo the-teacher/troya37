@@ -9,6 +9,6 @@ gem 'rake', '0.8.7' #(0.9.2.2, 0.9.2, 0.8.7)
 gem 'unicorn'
 gem 'capistrano'
 gem 'mysql', '2.8.1'
-gem 'paperclip', '2.3.6'
+gem 'paperclip', '2.3.1.1'
 gem 'haml', '3.1.4'
 gem 'rmagick', '2.13.1'
