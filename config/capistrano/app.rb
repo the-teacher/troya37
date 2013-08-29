@@ -16,6 +16,7 @@ namespace :app do
   # cap app:first_launch
   desc "cap app:first_launch"
   task :first_launch do
+    app.install_ruby
     app.gemset_create
     deploy.setup
     deploy.cold
