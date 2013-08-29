@@ -6,6 +6,7 @@ log
 *.bat
 *.sql
 
+.rvmrc
 Gemfile.lock
 public/uploads/*
 config/database.yml
