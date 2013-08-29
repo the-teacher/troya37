@@ -10,7 +10,7 @@ set_default(:unicorn_sock)   { "#{dir_pids}/unicorn.sock" }
 set_default(:unicorn_config) { "#{dir_conf}/unicorn_config.rb" }
 set_default(:unicorn_log)    { "#{shared_path}/log/unicorn.log" }
 set_default(:unicorn_err)    { "#{shared_path}/log/unicorn.err" }
-set_default(:gemset_use)     { _join ["cd #{current_path}", gemset] }
+# set_default(:gemset_use)     { _join ["cd #{current_path}", gemset] }
 
 namespace :app do
   # cap app:first_launch
@@ -31,7 +31,7 @@ namespace :app do
   # cap app:db_create
   desc "cap app:gemset_create"
   task :gemset_create do
-    run _join [rvm_src, "rvm gemset create #{gemset_name}"]
+    run _join [rvm_src, use_ruby, "rvm gemset create #{gemset_name}"]
   end
 
   # cap app:db_create

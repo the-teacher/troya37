@@ -1,2 +1,1 @@
-# rvm install ree-1.8.7-head
-rvm use ree-1.8.7-head@troya37 --create
+rvm use ree-1.8.7-2012.02@troya37 --create
