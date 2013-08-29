@@ -1,8 +1,8 @@
 production:
   adapter: mysql
-  database: ivgloves
+  database: troya37_pro
   host: localhost
-  username: nginx
-  password: vfcnthbvfhuj
+  username: root
+  password: rkfdlbqybrjyjhjdbx1
   encoding: utf8
   timeout: 5000
