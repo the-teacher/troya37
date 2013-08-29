@@ -1,8 +1,0 @@
-production:
-  adapter: mysql
-  database: troya37_pro
-  host: localhost
-  username: root
-  password: rkfdlbqybrjyjhjdbx1
-  encoding: utf8
-  timeout: 5000
