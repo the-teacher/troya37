@@ -7,7 +7,9 @@ log
 *.sql
 
 .rvmrc
-Gemfile.lock
+.ruby-version
+.ruby-gemset
+
 public/uploads/*
 config/database.yml
 config/capistrano/templates/database.production.yml
