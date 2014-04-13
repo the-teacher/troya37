@@ -2,6 +2,17 @@
 
 Just Deploy Tool based on capistrano 3
 
+```
+RVM_HOOK=false cap production rvm:install:ruby
+RVM_HOOK=false cap production rvm:install:gemset
+
+cap production deploy
+
+cap production nginx:config:include
+
+/etc/init.d/nginx restart
+```
+
 ### The MIT License (MIT)
 
 Copyright (c) [2013-2014] [Ilya N. Zykin, github/the-teacher]
