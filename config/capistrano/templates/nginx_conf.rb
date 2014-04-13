@@ -11,16 +11,20 @@ server{
     proxy_redirect off;
     proxy_set_header Host $http_host;
     proxy_pass http://<%= socket_name %>;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; 
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    proxy_pass_header Content-Type;
+    proxy_pass_header Content-Disposition;
+    proxy_pass_header Content-Length;
   }
 
   # serve static content directly
-  location ~* \.(ico|jpg|gif|png|swf|html|js|css)$ {
-    if (-f $request_filename) {
-      expires max;
-      #gzip_static on;
-      #add_header Cache-Control public;
-      break;
-    }
-  }
+  # location ~* \.(ico|jpg|gif|png|swf|html|js|css)$ {
+  #   if (-f $request_filename) {
+  #     expires max;
+  #     #gzip_static on;
+  #     #add_header Cache-Control public;
+  #     break;
+  #   }
+  # }
 }
