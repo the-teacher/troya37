@@ -12,10 +12,11 @@ configs:
   web_server: unicorn
 
   tools:
-    redis:    true
-    sidekiq:  true
-    sphinx:   true
-    whenever: true
+    redis:     true
+    sidekiq:   true
+    sphinx:    true
+    whenever:  true
+    new_relic: true
 
   rvm:
     ruby:   ruby-2.1.0
@@ -28,6 +29,10 @@ configs:
         - publickey
         - password
       forward_agent: true
+
+  new_relic:
+    app_name: XXXXXXXXXXX
+    key: XXXXXXXXXXXXX
 
   sphinx:
     port: 9400
