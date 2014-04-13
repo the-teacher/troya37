@@ -7,6 +7,8 @@ configs:
   repo:   git@github.com:user/repo.git
   shared_uploads: public/uploads
   deploy_to: /srv/www/project.com/project_production
+
+  skip_assets_precompile: false
   keep_releases: 10
 
   web_server: unicorn
