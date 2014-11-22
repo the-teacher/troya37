@@ -2,13 +2,13 @@ h2. Troya 37 company site
 
 The current site with a real database, but with changed the administrator password.
 
-h2. Сайт компании ТРОЯ 37
+h2. Сайт компании "Ивановская перчатка"
 
 Действующий сайт с реальной базой данных, но измененным паролем администратора.
 
 h3. Rails
 
-2.3.4 
+2.3.4
 
 h1. HOW TO INSTALL?
 

@@ -12,18 +12,18 @@
     =stylesheet_link_tag 'basic/basic.css', :media=>'screen'
     =stylesheet_link_tag 'basic/context.css', :media=>'screen'
     =stylesheet_link_tag 'basic/layout.css', :media=>'screen'
-    =stylesheet_link_tag 'basic/nav.css', :media=>'screen'    
+    =stylesheet_link_tag 'basic/nav.css', :media=>'screen'
     =stylesheet_link_tag 'basic/elements.css', :media=>'screen'
     =stylesheet_link_tag 'basic/styles.css', :media=>'screen'
     =stylesheet_link_tag 'basic/form.css', :media=>'screen'
     =stylesheet_link_tag 'basic/footer.css', :media=>'screen'
-    
+
     =yield :js
     =yield :css
     =yield :head
-    
+
     =#stylesheet_link_tag 'basic/index.css', :media=>'screen'
-    
+
   %body
     .body.overblock
       %p.sitelogo= '&nbsp;'
@@ -67,5 +67,5 @@
 
         %p
           <a href="http://open-cook.ru">tech-support</a>
-          &copy; #{Time.now.year} г. ООО "ТРОЯ". Россия, Иваново. Все права защищены.
+          &copy; #{Time.now.year} г. ООО "Ивановская перчатка". Россия, Иваново. Все права защищены.
           -#%br E-mail: %a{ :href => "#" } w37@mail.ru
