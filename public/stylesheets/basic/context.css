@@ -10,7 +10,7 @@ p.sitelogo{
   width:283px;
   height:84px;
   text-decoration:none;
-  background:#FFF url(/images/basic/troya.png) no-repeat scroll center 0;
+  background: url(/images/basic/troya.png) no-repeat scroll center 0 transparent;
   margin:0; padding:0;
 }
 a.products:hover{text-decoration:none;}
